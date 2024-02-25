@@ -1,0 +1,14 @@
+{
+  "name": "node-rest-opencc",
+  "version": "0.1",
+  "scripts": {
+    "serve": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "errorhandler": "^1.5.1",
+    "express": "4.17.1",
+    "marked": "0.8.2",
+    "opencc": "^1.1.2"
+  }
+}
