@@ -16,6 +16,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.options('/convert', routes.convertOptions);
 app.post('/convert', routes.convert);
 
 http.createServer(app).listen(app.get('port'), function(){

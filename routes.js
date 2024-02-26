@@ -11,11 +11,21 @@ exports.index = function (req, res) {
   return res.status(200).end('OpenCC REST API');
 };
 
+exports.convertOptions = function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Accept, Accept-Language, Content-Language, Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.status(204).end();
+}
+
 exports.convert = function (req, res) {
   var text = req.body.text;
   const config = req.body.config;
 
   res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Accept, Accept-Language, Content-Language, Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
 
   if (!instances[config]) {
     return res.status(400).end(JSON.stringify({message: 'Invalid config'}));
